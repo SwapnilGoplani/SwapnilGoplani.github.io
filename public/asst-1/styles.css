@@ -2,28 +2,29 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'serif';
     background-color: #deeb30ef;
+    font-family: 'sans';
 }
 
 h1, h2 {
 
     padding: 0;
     margin: 0;
-    font-family: 'sans-serif';
+    font-family: 'Balsamiq Sans', cursive;
+
 }
 
 h1 {
 
     font-size: 3rem;
-    font-weight: 300;
+    font-weight: 400;
     text-shadow: -2px 2px; 
 }
 
 h2 {
 
     font-size: 1.8rem;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .header {
@@ -67,6 +68,7 @@ h2 {
 
 .one {
 
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     flex: 0 1 auto;
@@ -82,9 +84,11 @@ h2 {
     padding: 15px;
     flex: 0 1 auto;
     border: solid 1px transparent;
+    width: inherit;
+    margin-right: 15px;
 }
 
-.image{
+.one img{
 
     width: inherit;
     border-radius: 4px;
@@ -94,9 +98,10 @@ h2 {
 .two {
     background-color: #E1F7A8;
     padding: 15px;
-    flex: 0 2 auto;
+    flex: 0 1 auto;
     border-radius: 4px;
     border: dashed 1px #3f13dd;
+    width: 600px;
 }
 
 .resp {
@@ -114,7 +119,7 @@ h2 {
         flex-direction: row;
         flex-wrap: wrap;
         max-width: 960px;
-        flex: 0 1 auto;
+        flex: 1 0 auto;
         justify-content: space-evenly;
         align-items: center;
         margin: 0;
@@ -126,17 +131,3 @@ h2 {
     }
 }
 
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
-
-.one img {
-    border: 1px solid black;
-    border-radius: 4px;
-    max-width: 100%;
-    max-height: 100%;
-}
