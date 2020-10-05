@@ -67,7 +67,10 @@ h2 {
 
 .one {
 
+    flex-wrap: wrap;
+    justify-content: space-between;
     flex: 0 1 auto;
+    align-items: center;
     width: 175px;
     margin-right: 15px;
 }
