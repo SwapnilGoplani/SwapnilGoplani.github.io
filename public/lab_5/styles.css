@@ -30,8 +30,12 @@ body {
   
   .flex-outer {
     max-width: 800px;
-    padding: 0px 16px;
-    margin: 0px;
+    margin: 0 auto;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding: 0px 6px;
   }
   
   .flex-outer li,
