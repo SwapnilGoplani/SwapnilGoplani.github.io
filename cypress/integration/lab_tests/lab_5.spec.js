@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-=======
 function hasDuplicates(array) {
   console.log(new Set(array));
   return (new Set(array)).size !== array.length;
 }
 
->>>>>>> 4da4279546773b6145420cfec1f42fcb85aa7ff9
 describe('Lab 5', () => {
   let initialBG;
   const initialCheckboxVals = [];
@@ -217,25 +214,17 @@ describe('Lab 5', () => {
     });
   });
   context('Lab 5 Goals 2', () => {
-<<<<<<< HEAD
-=======
     it('Has a script tag', () => {
       cy.get('script')
         .should('have.length.greaterThan', 0);
     });
 
->>>>>>> 4da4279546773b6145420cfec1f42fcb85aa7ff9
     it('Clicking the Activate button changes the background color', () => {
       cy.get('button')
         .contains('Activate')
         .click()
         .then(() => {
           cy.get('body').then(($bdy) => {
-<<<<<<< HEAD
-            console.log($bdy);
-            console.log($bdy.css('background-color'));
-=======
->>>>>>> 4da4279546773b6145420cfec1f42fcb85aa7ff9
             expect($bdy.css('background-color')).to.not.equal(initialBG);
           });
         });
@@ -252,11 +241,8 @@ describe('Lab 5', () => {
       cy.fixture('test_values').then((json) => {
         cy.get('h1')
           .contains(json.name);
-<<<<<<< HEAD
-=======
         cy.get('h1')
           .contains('Lab 5 for');
->>>>>>> 4da4279546773b6145420cfec1f42fcb85aa7ff9
       });
     });
 
@@ -274,8 +260,6 @@ describe('Lab 5', () => {
         .each(($el) => {
           expect(initialCheckboxVals.includes($el.text())).to.be.false;
         });
-<<<<<<< HEAD
-=======
 
       // each label is different than the other
       cy.get('.flex-inner label')
@@ -285,7 +269,6 @@ describe('Lab 5', () => {
           const testDupes = hasDuplicates(test);
           expect(hasDuplicates(test)).to.be.false;
         });
->>>>>>> 4da4279546773b6145420cfec1f42fcb85aa7ff9
     });
 
     it('And your form is now centered', () => {
