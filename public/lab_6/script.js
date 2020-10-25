@@ -19,9 +19,9 @@ function sortFunction(a, b, key) {
 }
 
 function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is
+  min1 = Math.ceil(min);
+  max1 = Math.floor(max);
+  return Math.floor(Math.random() * (max1 - min1 + 1) + min1);
 }
 
 document.body.addEventListener('submit', async (e) => {
@@ -50,11 +50,6 @@ document.body.addEventListener('submit', async (e) => {
       const ul = document.createElement('ul');
       ul.classname = 'flex-inner';
       $('form').prepend(ul);
-
-      const newFlex = document.createElement('.flex-inner');
-      const outFlex = document.getElementById('header');
-      newFlex.appendChild(newArr2);
-      document.body.insertBefore(newFlex, outFlex);
 
       reverseList.forEach((el, i) => {
         const li = document.createElement('li');
