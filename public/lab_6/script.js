@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // You may wish to find an effective randomizer function on MDN.
 
 function range(int) {
@@ -39,16 +40,25 @@ document.body.addEventListener('submit', async (e) => {
         document.querySelector('.flex-inner').remove();
       }
 
+      const cap = 'Hiya There';
       const newArr = range(10);
       const newArr2 = newArr.map(() => {
         const number = getRandomIntInclusive(0, 243);
         return fromServer(number);
       });
 
+      console.log(cap);
+      console.log(newArr2);
+      console.table(newArr);
       const reverseList = newArr2.sort((a, b) => sortFunction(b, a, 'name'));
       const ul = document.createElement('ul');
       ul.classname = 'flex-inner';
       $('form').prepend(ul);
+
+      const newFlex = document.createElement('.flex-inner');
+      const outFlex = document.getElementById('header');
+      newFlex.appendChild(newArr2);
+      document.body.insertBefore(newFlex, outFlex);
 
       reverseList.forEach((el, i) => {
         const li = document.createElement('li');
