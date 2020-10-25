@@ -19,9 +19,7 @@ function sortFunction(a, b, key) {
 }
 
 function getRandomIntInclusive(min, max) {
-  min1 = Math.ceil(min);
-  max1 = Math.floor(max);
-  return Math.floor(Math.random() * (max1 - min1 + 1) + min1);
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 document.body.addEventListener('submit', async (e) => {
@@ -48,7 +46,7 @@ document.body.addEventListener('submit', async (e) => {
 
       const reverseList = newArr2.sort((a, b) => sortFunction(b, a, 'name'));
       const ul = document.createElement('ul');
-      ul.classname = 'flex-inner';
+      ul.className = 'flex-inner';
       $('form').prepend(ul);
 
       reverseList.forEach((el, i) => {
