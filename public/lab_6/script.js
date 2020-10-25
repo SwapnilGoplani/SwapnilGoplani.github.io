@@ -21,7 +21,7 @@ function sortFunction(a, b, key) {
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive 
+  return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is
 }
 
 document.body.addEventListener('submit', async (e) => {
@@ -40,16 +40,12 @@ document.body.addEventListener('submit', async (e) => {
         document.querySelector('.flex-inner').remove();
       }
 
-      const cap = 'Hiya There';
       const newArr = range(10);
       const newArr2 = newArr.map(() => {
         const number = getRandomIntInclusive(0, 243);
-        return fromServer(number);
+        return fromServer[number];
       });
 
-      console.log(cap);
-      console.log(newArr2);
-      console.table(newArr);
       const reverseList = newArr2.sort((a, b) => sortFunction(b, a, 'name'));
       const ul = document.createElement('ul');
       ul.classname = 'flex-inner';
@@ -62,8 +58,8 @@ document.body.addEventListener('submit', async (e) => {
 
       reverseList.forEach((el, i) => {
         const li = document.createElement('li');
-        $(li).append('<input type = "checkbox" value$(el.code) id=$(el.code) />');
-        $(li).append('<label for = $(el.code)>$(el.name) </label>');
+        $(li).append(`<input type = "checkbox" value${el.code} id=${el.code} />`);
+        $(li).append(`<label for = ${el.code}>${el.name} </label>`);
         $(ul).append(li);
       });
     })
