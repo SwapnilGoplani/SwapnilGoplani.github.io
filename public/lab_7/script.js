@@ -1,15 +1,15 @@
 function convertRestaurantsToCategories(restaurantList) {
-  return restaurantList.reduce((collection, item, i) => {
-    const findCat = collection.find((findItem) => findItem.label === item.category);
+  return restaurantList.reduce((set, item, i) => {
+    const findCat = set.find((findItem) => findItem.label === item.category);
     if (!findCat) {
-      collection.push({
+      set.push({
         label: item.category,
         y: 1
       });
     } else {
       findCat.y += 1;
     }
-    return collection;
+    return set;
   }, []);
 }
 
