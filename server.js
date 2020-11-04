@@ -1,10 +1,7 @@
-// These are our required libraries to make the server work.
-/* eslint-disable no-console */
-/* eslint-disable no-unused-vars */
-import fetch from 'node-fetch';
 import express from 'express';
 import dotenv from 'dotenv';
-import countries from './public/lab_6/countries.js';
+import fetch from 'node-fetch';
+// import countries from "./public/lab_6/countries.js";
 
 dotenv.config();
 
@@ -17,21 +14,35 @@ app.use(express.static('public'));
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
   next();
 });
 
-app.route('/api')
-  .get(async(req, res) => {
+app
+  .route('/api')
+  .get((req, res) => {
     console.log('GET request detected');
-    console.log('fetch request data', json);
+    res.send(`Lab 5 for ${process.env.NAME}`);
   })
   .post(async (req, res) => {
     console.log('POST request detected');
-    const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json%27');
-    const json = await data.json();
-    const test = json.slice(0, 9);
-    res.json(json);
+    console.log('Form data in res.body', req.body);
+    res.send("Hello world"); // Lab 5
+    // res.json(countries);     // Lab 6
+
+    // async function callback, lab 7 #4-8
+    const data = await fetch(
+      'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json'
+    );
+    const output = await data.json();
+    for (let i = 0; i < 5; i++) {
+      console.log(output[i]);
+    }
+    // console.log(output);
+    res.json(output);
   });
 
 app.listen(port, () => {
