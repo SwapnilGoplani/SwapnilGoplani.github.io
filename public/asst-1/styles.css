@@ -1,38 +1,27 @@
-.game-container {
-
-    width: 500px;
-    height: 730px;
-    position: absolute;
+h1 {
+    color: blue;
 }
 
-.sky {
+body {
 
-    background-color: blue;
-    width: 500px;
-    height: 580px;
-    position: absolute;
+    text-align: center;
 }
 
-.ground {
+.container {
 
-    background-color: red;
-    width: 500px;
-    height: 150px;
-    position: absolute;
-    top: 500px; 
+    background: yellow;
+    width: 340px;
+    height: 340px;
+    border: 1px solid black;
+    margin: 0px auto;
 }
 
-.bird {
-    background-color: yellow;
-    position: absolute;
-    width: 60px;
-    height: 45px;
-}
+.tile {
 
-.obstacle {
-
-    background-color: green;
-    width: 60px;
-    height: 30px;
-    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: tomato;
+    font-size: 66px;
+    vertical-align: middle;
+    text-align: center;
 }
