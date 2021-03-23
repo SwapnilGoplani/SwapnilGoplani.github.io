@@ -18,11 +18,20 @@ function clickAPiece(event, tileArray) {
     // pos1
     // tileArray.find map/etc for position that is !.includes
   const allTiles = [...tiles];
-  const empty = allTiles.find((tile) => tile.classList.contains('empty'));
-  console.log(empty.classList[1]);
-  const clickedTile = clickedClasses[1];
+  const empty = allTiles.find((tile) => tile.classList.contains('empty')).classList[1]; //gets the position of empty tile
+  console.log(empty);
+  const clickedTile = clickedClasses[1]; //finds the position of tile clicked
   console.log(clickedTile);
-  console.log(positions[clickedTile]);
+  const possiblePos = positions[clickedTile]; //finds the possible moves for tile clicked
+  const move = possiblePos[possiblePos.indexOf(empty)]; //checks if empty tile is within possible moves, will be undefined if not possible
+  console.log(move);
+  if (move) { //if move isnt undefined, go into this loop
+    (document.getElementsByClassName(move)[0].classList.remove('empty')); //removes empty from classname of tile which is empty
+    (document.getElementsByClassName(clickedTile)[0].classList.add('empty')); //adds empty to classname of tile which will be empty
+    (document.getElementsByClassName(clickedTile)[0].innerText = '');
+    // eslint-disable-next-line prefer-destructuring
+    (document.getElementsByClassName(move)[0].innerText = clickedTile[3]); //these 2 lines change inner text
+  }//just have to change class names (maybe becuase something doesnt work not sure whats causing it)
 }
 
 
