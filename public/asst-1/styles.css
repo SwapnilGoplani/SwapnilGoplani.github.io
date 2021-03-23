@@ -107,7 +107,13 @@ body {
 }
 
 .pos9 {
+
     top: 230px;
     left: 230px;
     position: absolute;
+}
+
+.empty {
+    background: yellow;
+    border: none;
 }

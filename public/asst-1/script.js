@@ -10,18 +10,23 @@ const positions = {
   pos9: ['pos8', 'pos6']
 };
 
+const tiles = document.querySelectorAll('.tile');
+
 function clickAPiece(event, tileArray) {
-  console.log(event.target.innerText);
   const clickedClasses = [...event.target.classList]; // what position does this have assigned?
-  const unassigned = positions.find((position) => {
     // what position is not used in the array?
     // pos1
     // tileArray.find map/etc for position that is !.includes
-  });
+  const allTiles = [...tiles];
+  const empty = allTiles.find((tile) => tile.classList.contains('empty'));
+  console.log(empty.classList[1]);
+  const clickedTile = clickedClasses[1];
+  console.log(clickedTile);
+  console.log(positions[clickedTile]);
 }
 
+
 async function windowActions() {
-  const tiles = document.querySelectorAll('.tile');
   console.log(tiles);
   const tileArray = [...tiles];
   console.log('tiles', tileArray);
